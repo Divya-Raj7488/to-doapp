@@ -4,8 +4,13 @@ const NewTaskForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleNewTask = () => {
+    if (title === "" || description === "" || status === "") {
+      setErrorMsg("please enter all details");
+      return "all fields are necessary";
+    }
     let taskData = localStorage.getItem("tasks");
     let tasks = [];
     if (taskData !== null) {
@@ -25,7 +30,6 @@ const NewTaskForm = () => {
     setDescription("");
     setStatus("");
     console.log("Task inserted successfully");
-    
   };
   return (
     <div className="formContainer">
@@ -47,7 +51,7 @@ const NewTaskForm = () => {
             setDescription(e.target.value);
           }}
         />
-        
+
         <div className="selectContainer">
           <select
             className="selectStatus"
@@ -55,12 +59,14 @@ const NewTaskForm = () => {
               setStatus(e.target.value);
             }}
           >
-            <option value="" >status</option>
+            <option value="">status</option>
             <option value="pending">pending</option>
             <option value="In progress">In progress</option>
             <option value="complete">complete</option>
           </select>
-          </div>
+          
+        </div>
+        <div className="errMsg">{errorMsg}</div>
         <button onClick={handleNewTask}>Create new task</button>
       </div>
     </div>
