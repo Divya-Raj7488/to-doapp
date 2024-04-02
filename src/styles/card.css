@@ -15,3 +15,7 @@
 .cardContainer:hover {
     transform: translate(-5px,-5px);
 }
+.description{
+  width: 80%;
+  text-align: center;
+}

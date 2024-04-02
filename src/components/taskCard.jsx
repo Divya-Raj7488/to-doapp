@@ -6,7 +6,7 @@ const TaskCard = (props) => {
   return (
     <div className="cardContainer">
       <h3>{task.id}: {task.title}</h3>
-      <div>{task.description}</div>
+      <div className="description">{task.description}</div>
       <div>{task.status}</div>
     </div>
   );
