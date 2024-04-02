@@ -1,0 +1,52 @@
+.taskContainer {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* background: linear-gradient(to right, rgb(74, 72, 72), rgb(68, 64, 64)); */
+  background: rgba(36, 35, 35, 0.913);
+}
+.showFormBtn {
+  width: 10rem;
+  border: 1px solid white;
+  animation: moveUp 2s forwards;
+  background: transparent;
+  margin-top: 1rem;
+}
+.taskCardContainer{
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.rem;
+}
+.taskCardContainer{
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.noTask{
+  color: white;
+}
+@keyframes moveUp {
+  from {
+    transform: translateY(50vh);
+  }
+  to {
+    transform: translateY(0vh);
+  }
+}
