@@ -14,17 +14,21 @@ function App() {
     } else {
       setAllTasks(JSON.parse(tasks));
     }
-  }, [showForm]);
+  }, [showForm,allTasks]);
 
   const changeShowFormStatus = () => {
     setShowForm(!showForm);
   };
+ const removeAllTasks = () =>{
+  localStorage.clear('task')
+ }
 
   return (
     <div className="taskContainer">
       <button onClick={changeShowFormStatus} className="showFormBtn">
         {showForm === true ? <span>Remove Form</span> : <span>Add Task</span>}
       </button>
+      <button  className="showFormBtn" onClick={removeAllTasks}>remove all task</button>
       {showForm === false && (
         <div className="taskCardContainer">
           {allTasks.length > 0 ? (
